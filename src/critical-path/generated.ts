@@ -1,5 +1,10 @@
 import { RepoKitCommand } from "@repokit/core";
 
+/**
+ * ### Critical Path
+ *
+ * A repokit command for static critical path analysis
+ */
 export const CriticalPath = new RepoKitCommand({
   name: "critical-path",
   description:
@@ -54,6 +59,12 @@ export const CriticalPath = new RepoKitCommand({
   },
 });
 
+/**
+ * ### buildCriticalPathCommand
+ *
+ * Customize your Critical Path command by generating it
+ * with your desired name and build path
+ */
 export function buildCriticalPathCommand(config: {
   buildPath: string;
   commandName?: string;

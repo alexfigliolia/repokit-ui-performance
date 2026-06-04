@@ -21,16 +21,18 @@ export class CriticalPathGenerator extends Generator {
     Schemas.MEASURE_SCHEMA,
   ] as const;
   public static readonly MEASURE_SOURCES = [Schemas.MEASURE_SCHEMA] as const;
+  public readonly COMMAND_DOC =
+    "### Critical Path\n A `repokit` command for static critical path analysis";
+  public readonly GENERATE_COMMAND_DOC =
+    "### buildCriticalPathCommand\n Customize your `Critical Path` command by generating it with your desired name and build path";
 
   public toCode(
     staticCommand: IRepoKitCommand,
     dynamicCommand: IRepoKitCommand,
-  ) {
-    return `import { RepoKitCommand } from "@repokit/core";
-
-      export const CriticalPath = new RepoKitCommand(${JSON.stringify(staticCommand, null, 2)});\n\n
-    
-      export function buildCriticalPathCommand(config: { buildPath: string, commandName?: string }) {
+  ): [string, string] {
+    return [
+      `export const CriticalPath = new RepoKitCommand(${JSON.stringify(staticCommand, null, 2)});`,
+      `export function buildCriticalPathCommand(config: { buildPath: string, commandName?: string }) {
         const command = new RepoKitCommand(${JSON.stringify(dynamicCommand, null, 2)});
         command.name = config.commandName ?? command.name;
         for (const key in command.commands) {
@@ -43,7 +45,8 @@ export class CriticalPathGenerator extends Generator {
           )
         }
         return command;
-      }`;
+      }`,
+    ];
   }
 
   public async buildScripts(buildPath = false) {

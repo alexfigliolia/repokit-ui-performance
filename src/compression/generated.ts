@@ -1,5 +1,10 @@
 import { RepoKitCommand } from "@repokit/core";
 
+/**
+ * ### Compression
+ *
+ * A repokit command for in place build compression
+ */
 export const Compression = new RepoKitCommand({
   name: "ui-compression",
   description: "Static compression for production UI builds",
@@ -16,6 +21,12 @@ export const Compression = new RepoKitCommand({
   },
 });
 
+/**
+ * ### buildCompressionCommand
+ *
+ * Customize your Compression command by generating it with
+ * your desired name and build path
+ */
 export function buildCompressionCommand(config: {
   buildPath: string;
   commandName?: string;

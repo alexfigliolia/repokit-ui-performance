@@ -13,16 +13,18 @@ import { Generator } from "@tools/codegen";
 export class CompressionGenerator extends Generator {
   public readonly SRC = join(__dirname, "../..", "src", "compression");
   public readonly OUT_FILE = join(this.SRC, "generated.ts");
+  public readonly COMMAND_DOC =
+    "### Compression\n A `repokit` command for in-place build compression";
+  public readonly GENERATE_COMMAND_DOC =
+    "### buildCompressionCommand\n Customize your `Compression` command by generating it with your desired name and build path";
 
   public toCode(
     staticCommand: IRepoKitCommand,
     dynamicCommand: IRepoKitCommand,
-  ) {
-    return `import { RepoKitCommand } from "@repokit/core";
-
-      export const Compression = new RepoKitCommand(${JSON.stringify(staticCommand, null, 2)});\n\n
-    
-      export function buildCompressionCommand(config: { buildPath: string, commandName?: string }) {
+  ): [string, string] {
+    return [
+      `export const Compression = new RepoKitCommand(${JSON.stringify(staticCommand, null, 2)});`,
+      `export function buildCompressionCommand(config: { buildPath: string, commandName?: string }) {
         const command = new RepoKitCommand(${JSON.stringify(dynamicCommand, null, 2)});
         command.name = config.commandName ?? command.name;
         for (const key in command.commands) {
@@ -32,7 +34,8 @@ export class CompressionGenerator extends Generator {
           );
         }
         return command;
-      }`;
+      }`,
+    ];
   }
 
   public buildScripts(buildPath = false): IRepoKitCommand {
