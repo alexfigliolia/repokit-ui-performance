@@ -1,0 +1,81 @@
+{
+  "name": "@repokit/ui-performance",
+  "version": "4.0.1",
+  "description": "A UI performance focused command for Repokit",
+  "keywords": [
+    "compression",
+    "critical-path",
+    "performance",
+    "repokit",
+    "ui"
+  ],
+  "homepage": "https://github.com/alexfigliolia/repokit-ui-performance#readme",
+  "license": "MIT",
+  "author": "Alex Figliolia",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexfigliolia/repokit-ui-performance.git"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./args": {
+      "import": {
+        "types": "./dist/args.d.mts",
+        "default": "./dist/args.mjs"
+      },
+      "require": {
+        "types": "./dist/args.d.cts",
+        "default": "./dist/args.cjs"
+      }
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsx ./build-tools/build/run.ts",
+    "lint": "pnpm oxlint --type-aware --type-check --report-unused-disable-directives --fix && pnpm oxfmt"
+  },
+  "dependencies": {
+    "@ui-perf/build-compression": "^1.1.5",
+    "@ui-perf/critical-path": "^1.1.5"
+  },
+  "devDependencies": {
+    "@figliolia/child-process": "^1.0.4",
+    "@repokit/core": "^4.0.3",
+    "@types/node": "^25.3.0",
+    "@typescript-eslint/eslint-plugin": "^8.57.1",
+    "@typescript-eslint/parser": "^8.57.1",
+    "eslint": "^10.0.3",
+    "eslint-import-resolver-typescript": "^4.4.4",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-simple-import-sort": "^13.0.0",
+    "eslint-plugin-unused-imports": "^4.4.1",
+    "oxfmt": "^0.53.0",
+    "oxlint": "^1.42.0",
+    "oxlint-tsgolint": "^0.23.0",
+    "tsdown": "^0.22.0",
+    "tsx": "^4.21.0",
+    "typescript": "^6.0.2"
+  },
+  "peerDependencies": {
+    "@repokit/core": ">=4.0.0"
+  },
+  "packageManager": "pnpm@10.33.2"
+}
