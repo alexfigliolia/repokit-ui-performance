@@ -27,7 +27,7 @@ export const RepoKit = new RepoKitConfig({
 
 You can customize the name and embed your build paths to this libraries commands using the `buildCompressionCommand()` and `buildCriticalPathCommand()` functions.
 
-Each allows you to specify an optional name to alias the command with as well as a build path with which to scope the commands
+Each allows you to specify an optional name to alias the command with as well as a build path with which to scope the commands.
 
 ```typescript
 // repokit.ts
@@ -53,3 +53,9 @@ export const RepoKit = new RepoKitConfig({
   ],
 });
 ```
+
+## Background
+
+This library aims to provide wrappers around the tools published on `npm` under the `@ui-perf` workspace.
+
+The `@ui-perf` workspace is designed to be a place to aggregate useful performance-related tools for modern web based user interfaces.
