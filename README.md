@@ -2,6 +2,11 @@
 
 A set of commands to add to your RepoKit configuration for optimizing web-based UI builds
 
+Currently supported are commands for
+
+1. Compressing UI Builds using [@ui-perf/build-compression](https://www.npmjs.com/package/@ui-perf/build-compression)
+1. Critical Path Analysis [@ui-perf/critical-path](https://www.npmjs.com/package/@ui-perf/critical-path)
+
 ## Installation
 
 ```bash

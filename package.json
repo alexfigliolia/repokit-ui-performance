@@ -1,7 +1,7 @@
 {
   "name": "@repokit/ui-performance",
-  "version": "1.0.0",
-  "description": "A UI performance focused command for Repokit",
+  "version": "1.0.1",
+  "description": "UI performance focused commands for Repokit",
   "keywords": [
     "compression",
     "critical-path",
