@@ -1,6 +1,6 @@
 {
   "name": "@repokit/ui-performance",
-  "version": "4.0.1",
+  "version": "1.0.0",
   "description": "A UI performance focused command for Repokit",
   "keywords": [
     "compression",
