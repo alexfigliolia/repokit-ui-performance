@@ -58,7 +58,7 @@ export class CompressionGenerator extends Generator {
 
   private buildCommand(buildPath = false) {
     const [args, argsImport] = this.toInjectableArgs(buildPath);
-    return `node -e 'import { compress } from "@ui-perf/build-compression";${argsImport}${args}compress(String([args["path"]]));' --`;
+    return `node -e 'import { compress } from "@ui-perf/build-compression";${argsImport}${args}void compress(String([args["path"]]));' --`;
   }
 
   public toInjectableArgs(buildPath = false): [string, string] {

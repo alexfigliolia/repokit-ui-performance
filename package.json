@@ -1,6 +1,6 @@
 {
   "name": "@repokit/ui-performance",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "UI performance focused commands for Repokit",
   "keywords": [
     "compression",
@@ -53,12 +53,12 @@
     "lint": "pnpm oxlint --type-aware --type-check --report-unused-disable-directives --fix && pnpm oxfmt"
   },
   "dependencies": {
-    "@ui-perf/build-compression": "^1.1.5",
-    "@ui-perf/critical-path": "^1.1.5"
+    "@ui-perf/build-compression": "^2.0.0",
+    "@ui-perf/critical-path": "^2.0.0"
   },
   "devDependencies": {
     "@figliolia/child-process": "^1.0.4",
-    "@repokit/core": "^4.0.3",
+    "@repokit/core": "^5.0.2",
     "@types/node": "^25.3.0",
     "@typescript-eslint/eslint-plugin": "^8.57.1",
     "@typescript-eslint/parser": "^8.57.1",
@@ -67,7 +67,7 @@
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-simple-import-sort": "^13.0.0",
     "eslint-plugin-unused-imports": "^4.4.1",
-    "oxfmt": "^0.53.0",
+    "oxfmt": "^0.55.0",
     "oxlint": "^1.42.0",
     "oxlint-tsgolint": "^0.23.0",
     "tsdown": "^0.22.0",
@@ -75,7 +75,7 @@
     "typescript": "^6.0.2"
   },
   "peerDependencies": {
-    "@repokit/core": ">=4.0.0"
+    "@repokit/core": ">=5.0.0"
   },
   "packageManager": "pnpm@10.33.2"
 }
