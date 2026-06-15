@@ -11,7 +11,7 @@ export const Compression = new RepoKitCommand({
   commands: {
     compress: {
       command:
-        'node -e \'import { compress } from "@ui-perf/build-compression";import { dynamicPathArgs } from "@repokit/ui-performance/args";const args = dynamicPathArgs();compress(String([args["path"]]));\' --',
+        'node -e \'import { compress } from "@ui-perf/build-compression";import { dynamicPathArgs } from "@repokit/ui-performance/args";const args = dynamicPathArgs();void compress(String([args["path"]]));\' --',
       description:
         "Compresses files recursively in a target directory using brotli, gzip, deflate, and zstandard at their highest compression-yielding settings",
       args: {
@@ -37,7 +37,7 @@ export function buildCompressionCommand(config: {
     commands: {
       compress: {
         command:
-          'node -e \'import { compress } from "@ui-perf/build-compression";const args = { path: "<INJECT_BUILD_PATH>" };compress(String([args["path"]]));\' --',
+          'node -e \'import { compress } from "@ui-perf/build-compression";const args = { path: "<INJECT_BUILD_PATH>" };void compress(String([args["path"]]));\' --',
         description:
           "Compresses files recursively in a target directory using brotli, gzip, deflate, and zstandard at their highest compression-yielding settings",
       },

@@ -48,7 +48,7 @@ export const CriticalPath = new RepoKitCommand({
     },
     measure: {
       command:
-        'node -e \'import { dynamicPathArgs } from "@repokit/ui-performance/args";import { cli } from "@ui-perf/critical-path";const args: Record<string, string> = dynamicPathArgs();cli(String(args["path"]));\' --',
+        'node -e \'import { dynamicPathArgs } from "@repokit/ui-performance/args";import { cli } from "@ui-perf/critical-path";const args: Record<string, string> = dynamicPathArgs();void cli(String(args["path"]));\' --',
       description:
         "Logs the byte measurements of critical HTML, CSS, and JavaScript to stdout",
       args: {
@@ -106,7 +106,7 @@ export function buildCriticalPathCommand(config: {
       },
       measure: {
         command:
-          'node -e \'import { cli } from "@ui-perf/critical-path";const args = "<INJECT_BUILD_PATH>";cli(String(args["path"]));\' --',
+          'node -e \'import { cli } from "@ui-perf/critical-path";const args = "<INJECT_BUILD_PATH>";void cli(String(args["path"]));\' --',
         description:
           "Logs the byte measurements of critical HTML, CSS, and JavaScript to stdout",
         args: {},

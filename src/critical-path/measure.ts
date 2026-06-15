@@ -4,4 +4,4 @@ import { cli } from "@ui-perf/critical-path";
 const args: Record<string, string> = {};
 // INJECT_ARGS
 
-cli(String(args["path"]));
+void cli(String(args["path"]));
